@@ -21,8 +21,10 @@ export const HIGHLIGHT_NONE = 'HIGHLIGHT_NONE';
 class MiniCalendar extends React.Component {
 	styles = StyleSheet.create( {
 		body: {
-			fontSize: 10,
-			width: 145,
+			fontSize: 12,
+			width: '33.3%',
+			borderRight: '1 solid #C9C9C9',
+			borderBottom: '1 solid #C9C9C9',
 		},
 		week: {
 			display: 'flex',
@@ -59,7 +61,6 @@ class MiniCalendar extends React.Component {
 			fontWeight: 'bold',
 		},
 		monthName: {
-			textTransform: 'uppercase',
 			padding: '2 5',
 			textDecoration: 'none',
 			color: '#888',
