@@ -112,6 +112,7 @@ class Header extends React.PureComponent {
 
 		return (
 			<View id={ id } style={ this.styles.header }>
+				{calendar}
 				<View style={ this.styles.meta }>
 					<View style={ this.styles.dateMain }>
 						<Link src={ titleLink } style={ this.styles.title }>
@@ -130,7 +131,6 @@ class Header extends React.PureComponent {
 						<Text style={ this.styles.subtitle }>{subtitle}</Text>
 					</View>
 				</View>
-				{calendar}
 			</View>
 		);
 	}
