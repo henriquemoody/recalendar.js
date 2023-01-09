@@ -5,6 +5,7 @@ import React from 'react';
 import { withTranslation } from 'react-i18next';
 
 import { getWeekNumber } from 'lib/date';
+import Grid from 'pdf/components/grid';
 import Header from 'pdf/components/header';
 import MiniCalendar, { HIGHLIGHT_WEEK } from 'pdf/components/mini-calendar';
 import PdfConfig from 'pdf/config';
@@ -129,6 +130,7 @@ class WeekOverviewPage extends React.Component {
 		const { t, date, config } = this.props;
 		return (
 			<Page id={ weekOverviewLink( date ) } size={ config.pageSize }>
+				<Grid startX={ 6 } startY={ 8 } height={ 576 } width={ 432 } />
 				<View style={ this.styles.page }>
 					<Header
 						isLeftHanded={ config.isLeftHanded }

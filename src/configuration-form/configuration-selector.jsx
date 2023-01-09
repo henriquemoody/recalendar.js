@@ -98,7 +98,7 @@ class ConfigurationSelector extends React.Component {
 			case TEMPLATE_MINIMALISTIC:
 				config.specialDates = {};
 				config.habits = [];
-				config.isMonthOverviewEnabled = false;
+				config.isMonthOverviewEnabled = true;
 				config.monthItinerary = [];
 				config.isWeekOverviewEnabled = true;
 				config.todos = [];

@@ -5,6 +5,7 @@ import React from 'react';
 import { withTranslation } from 'react-i18next';
 
 import { getWeekendDays } from 'lib/date';
+import Grid from 'pdf/components/grid';
 import Itinerary from 'pdf/components/itinerary';
 import MiniCalendar, { HIGHLIGHT_NONE } from 'pdf/components/mini-calendar';
 import PdfConfig from 'pdf/config';
@@ -207,6 +208,7 @@ class MonthOverviewPage extends React.Component {
 		return (
 			<>
 				<Page id={ monthOverviewLink( date ) } size={ config.pageSize }>
+					<Grid startX={ 6 } startY={ 8 } height={ 576 } width={ 432 } />
 					<View style={ this.styles.page }>
 						<View style={ this.styles.header }>
 							<View style={ this.styles.meta }>

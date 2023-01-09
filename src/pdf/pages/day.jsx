@@ -3,6 +3,7 @@ import dayjs from 'dayjs';
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import Grid from 'pdf/components/grid';
 import Header from 'pdf/components/header';
 import Itinerary from 'pdf/components/itinerary';
 import MiniCalendar from 'pdf/components/mini-calendar';
@@ -50,6 +51,7 @@ class DayPage extends React.Component {
 		return (
 			<>
 				<Page id={ dayPageLink( date ) } size={ config.pageSize }>
+					<Grid startX={ 6 } startY={ 8 } height={ 576 } width={ 432 } />
 					<View { ...optionalStartOfMonthId } style={ this.styles.page }>
 						<Header
 							{ ...optionalStartOfWeekId }

@@ -10,6 +10,7 @@ class Header extends React.PureComponent {
 			header: {
 				flexGrow: 0,
 				flexDirection: 'row',
+				backgroundColor: 'white',
 			},
 			meta: {
 				flexGrow: 1,
