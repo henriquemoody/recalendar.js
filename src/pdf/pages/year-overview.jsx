@@ -3,7 +3,7 @@ import dayjs from 'dayjs';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import MiniCalendar, { HIGHLIGHT_NONE } from 'pdf/components/mini-calendar';
+import SquareCalendar, { HIGHLIGHT_NONE } from 'pdf/components/square-calendar';
 import PdfConfig from 'pdf/config';
 import { yearOverviewLink } from 'pdf/lib/links';
 
@@ -27,14 +27,14 @@ class YearOverviewPage extends React.Component {
 		let currentDate = startDate;
 		while ( currentDate.isBefore( endDate ) ) {
 			calendars.push(
-				<MiniCalendar
+				<SquareCalendar
 					key={ currentDate.unix() }
 					date={ currentDate }
 					highlightMode={ HIGHLIGHT_NONE }
 					config={ config }
 				>
 					{currentDate.format( 'MMMM YYYY' )}
-				</MiniCalendar>,
+				</SquareCalendar>,
 			);
 			currentDate = currentDate.add( 1, 'month' );
 		}

@@ -6,7 +6,7 @@ import React from 'react';
 import Grid from 'pdf/components/grid';
 import Header from 'pdf/components/header';
 import Itinerary from 'pdf/components/itinerary';
-import MiniCalendar from 'pdf/components/mini-calendar';
+import SquareCalendar from 'pdf/components/square-calendar';
 import PdfConfig from 'pdf/config';
 import {
 	dayPageLink,
@@ -62,7 +62,7 @@ class DayPage extends React.Component {
 							number={ date.format( 'DD' ) }
 							previousLink={ '#' + previousDayPageLink( date, config ) }
 							nextLink={ '#' + nextDayPageLink( date, config ) }
-							calendar={ <MiniCalendar date={ date } config={ config } /> }
+							calendar={ <SquareCalendar date={ date } config={ config } /> }
 							specialItems={ specialItems }
 						/>
 						<View style={ this.styles.content }>

@@ -7,7 +7,7 @@ import { withTranslation } from 'react-i18next';
 import { getWeekendDays } from 'lib/date';
 import Grid from 'pdf/components/grid';
 import Itinerary from 'pdf/components/itinerary';
-import MiniCalendar, { HIGHLIGHT_NONE } from 'pdf/components/mini-calendar';
+import SquareCalendar, { HIGHLIGHT_NONE } from 'pdf/components/square-calendar';
 import PdfConfig from 'pdf/config';
 import { dayPageLink, monthOverviewLink } from 'pdf/lib/links';
 import { pageStyle } from 'pdf/styles';
@@ -214,7 +214,7 @@ class MonthOverviewPage extends React.Component {
 							<View style={ this.styles.meta }>
 								<Text style={ this.styles.title }>{date.format( 'MMMM' )}</Text>
 							</View>
-							<MiniCalendar
+							<SquareCalendar
 								date={ date }
 								highlightMode={ HIGHLIGHT_NONE }
 								config={ config }

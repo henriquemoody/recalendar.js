@@ -7,7 +7,7 @@ import { withTranslation } from 'react-i18next';
 import { getWeekNumber } from 'lib/date';
 import Header from 'pdf/components/header';
 import Itinerary from 'pdf/components/itinerary';
-import MiniCalendar, { HIGHLIGHT_WEEK } from 'pdf/components/mini-calendar';
+import SquareCalendar, { HIGHLIGHT_WEEK } from 'pdf/components/square-calendar';
 import PdfConfig from 'pdf/config';
 import { weekRetrospectiveLink } from 'pdf/lib/links';
 import { content, pageStyle } from 'pdf/styles';
@@ -43,7 +43,7 @@ class WeekRetrospectivePage extends React.Component {
 							}
 							nextLink={ '#' + weekRetrospectiveLink( date.add( 1, 'week' ) ) }
 							calendar={
-								<MiniCalendar
+								<SquareCalendar
 									date={ date }
 									highlightMode={ HIGHLIGHT_WEEK }
 									config={ config }

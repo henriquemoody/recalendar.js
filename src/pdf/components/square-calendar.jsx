@@ -18,7 +18,7 @@ export const HIGHLIGHT_WEEK = 'HIGHLIGHT_WEEK';
 export const HIGHLIGHT_DAY = 'HIGHLIGHT_DAY';
 export const HIGHLIGHT_NONE = 'HIGHLIGHT_NONE';
 
-class MiniCalendar extends React.Component {
+class SquareCalendar extends React.Component {
 	styles = StyleSheet.create( {
 		body: {
 			fontSize: 12,
@@ -271,11 +271,11 @@ class MiniCalendar extends React.Component {
 	}
 }
 
-MiniCalendar.defaultProps = {
+SquareCalendar.defaultProps = {
 	highlightMode: HIGHLIGHT_DAY,
 };
 
-MiniCalendar.propTypes = {
+SquareCalendar.propTypes = {
 	config: PropTypes.instanceOf( PdfConfig ).isRequired,
 	date: PropTypes.instanceOf( dayjs ).isRequired,
 	highlightMode: PropTypes.oneOf( [
@@ -286,4 +286,4 @@ MiniCalendar.propTypes = {
 	t: PropTypes.func.isRequired,
 };
 
-export default withTranslation( 'pdf' )( MiniCalendar );
+export default withTranslation( 'pdf' )( SquareCalendar );

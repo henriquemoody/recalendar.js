@@ -7,7 +7,7 @@ import { withTranslation } from 'react-i18next';
 import { getWeekNumber } from 'lib/date';
 import Grid from 'pdf/components/grid';
 import Header from 'pdf/components/header';
-import MiniCalendar, { HIGHLIGHT_WEEK } from 'pdf/components/mini-calendar';
+import SquareCalendar, { HIGHLIGHT_WEEK } from 'pdf/components/square-calendar';
 import PdfConfig from 'pdf/config';
 import { weekOverviewLink, dayPageLink } from 'pdf/lib/links';
 import { content, pageStyle } from 'pdf/styles';
@@ -140,7 +140,7 @@ class WeekOverviewPage extends React.Component {
 						previousLink={ '#' + weekOverviewLink( date.subtract( 1, 'week' ) ) }
 						nextLink={ '#' + weekOverviewLink( date.add( 1, 'week' ) ) }
 						calendar={
-							<MiniCalendar
+							<SquareCalendar
 								date={ date }
 								highlightMode={ HIGHLIGHT_WEEK }
 								config={ config }
