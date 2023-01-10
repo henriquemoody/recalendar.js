@@ -26,6 +26,7 @@ class MonthOverviewPage extends React.Component {
 					flexGrow: 1,
 				},
 				header: {
+					backgroundColor: 'white',
 					flexGrow: 0,
 					flexDirection: 'row',
 					borderBottom: '1 solid black',

@@ -41,12 +41,14 @@ class WeekOverviewPage extends React.Component {
 				dayOfWeek: {
 					fontSize: 12,
 					fontWeight: 'bold',
+					backgroundColor: 'white',
 				},
 				shortDate: {
 					fontSize: 10,
 					color: '#9D9D9D',
 					fontWeight: 'bold',
 					marginLeft: 8,
+					backgroundColor: 'white',
 				},
 				todos: {
 					width: '66.6%',

@@ -8,10 +8,12 @@ class Header extends React.PureComponent {
 
 		const stylesObject = {
 			header: {
+				fontSize: 14,
 				flexGrow: 0,
 				flexDirection: 'row',
+				height: 55,
 				backgroundColor: 'white',
-				borderBottom: '1px solid black',
+				borderBottom: '1px solid #9D9D9D',
 			},
 			meta: {
 				flexGrow: 1,
@@ -31,7 +33,6 @@ class Header extends React.PureComponent {
 				marginLeft: 'auto',
 				textAlign: 'right',
 				margin: '0 5',
-				fontSize: props.subtitleSize,
 				flex: 1,
 			},
 			title: {
@@ -40,7 +41,6 @@ class Header extends React.PureComponent {
 				textAlign: 'right',
 				color: 'black',
 				padding: '10 5',
-				fontSize: props.titleSize,
 				maxWidth: 165,
 			},
 			arrow: {
@@ -48,10 +48,9 @@ class Header extends React.PureComponent {
 				textDecoration: 'none',
 				justifyContent: 'center',
 				padding: '10 5',
-				fontSize: props.titleSize,
 			},
 			dayNumber: {
-				fontSize: 45,
+				fontSize: 18,
 				fontWeight: 'bold',
 				marginBottom: -5,
 			},
@@ -60,7 +59,6 @@ class Header extends React.PureComponent {
 				width: 130,
 			},
 			specialItem: {
-				fontSize: 10,
 				marginLeft: 5,
 				fontStyle: 'italic',
 			},
@@ -100,7 +98,6 @@ class Header extends React.PureComponent {
 
 	render() {
 		const {
-			calendar,
 			id,
 			nextLink,
 			number,
@@ -112,7 +109,6 @@ class Header extends React.PureComponent {
 
 		return (
 			<View id={ id } style={ this.styles.header }>
-				{/*{calendar}*/}
 				<View style={ this.styles.meta }>
 					<View style={ this.styles.dateMain }>
 						<Link src={ titleLink } style={ this.styles.title }>
@@ -144,7 +140,6 @@ Header.defaultProps = {
 Header.propTypes = {
 	id: PropTypes.string,
 	children: PropTypes.node,
-	calendar: PropTypes.node.isRequired,
 	isLeftHanded: PropTypes.bool.isRequired,
 	number: PropTypes.string.isRequired,
 	specialItems: PropTypes.array,

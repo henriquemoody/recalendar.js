@@ -21,31 +21,33 @@ export const HIGHLIGHT_NONE = 'HIGHLIGHT_NONE';
 class SquareCalendar extends React.Component {
 	styles = StyleSheet.create( {
 		body: {
-			fontSize: 12,
-			width: '33.3%',
-			borderRight: '1 solid #C9C9C9',
-			borderBottom: '1 solid #C9C9C9',
+			fontSize: 8,
+			width: '40%',
+			margin: 5,
 		},
 		week: {
 			display: 'flex',
 			flexDirection: 'row',
 		},
 		currentWeek: {
-			backgroundColor: '#CCC',
+			backgroundColor: this.props.config.colors.accent1,
 		},
 		currentWeekDay: {
-			border: '1 solid #CCC',
+			borderWidth: 1,
+			borderStyle: 'solid',
+			borderColor: this.props.config.colors.accent1,
 		},
 		day: {
 			flexGrow: 1,
 			flexShrink: 1,
-			width: 14,
+			width: 20,
 			textDecoration: 'none',
 			color: 'black',
 			fontWeight: 'normal',
 			textAlign: 'center',
-			padding: '1',
-			border: '1 solid white',
+			// borderWidth: 1,
+			// borderStyle: 'solid',
+			// borderColor: this.props.config.colors.accent1,
 		},
 		header: {
 			flexDirection: 'row',
@@ -56,15 +58,15 @@ class SquareCalendar extends React.Component {
 			textAlign: 'center',
 			padding: '2 5',
 			textDecoration: 'none',
-			color: '#AAA',
-			fontSize: 12,
+			color: this.props.config.colors.accent1,
+			fontSize: 10,
 			fontWeight: 'bold',
 		},
 		monthName: {
 			padding: '2 5',
 			textDecoration: 'none',
-			color: '#888',
-			fontSize: 12,
+			color: this.props.config.colors.accent1,
+			fontSize: 10,
 			fontWeight: 'bold',
 		},
 		pushLeft: {
@@ -74,8 +76,10 @@ class SquareCalendar extends React.Component {
 			marginRight: 'auto',
 		},
 		currentDay: {
-			backgroundColor: '#CCC',
-			border: '1 solid #CCC',
+			backgroundColor: this.props.config.colors.accent2,
+			borderWidth: 1,
+			borderStyle: 'solid',
+			borderColor: this.props.config.colors.basic1,
 		},
 		weekendDay: {
 			fontWeight: 'bold',
@@ -87,11 +91,10 @@ class SquareCalendar extends React.Component {
 			color: '#999',
 		},
 		weekNumber: {
-			color: '#999',
-			border: 'none',
-			borderRight: '1 solid black',
-			fontSize: 10,
 			justifyContent: 'center',
+			borderStyle: 'solid',
+			borderColor: this.props.config.colors.accent2,
+			borderRightWidth: 1,
 			width: 20,
 		},
 		weekRetrospective: {
@@ -102,10 +105,10 @@ class SquareCalendar extends React.Component {
 		},
 		weekdayName: {
 			fontWeight: 'bold',
-			color: 'black',
-			border: 'none',
-			borderBottom: '1 solid black',
-			fontSize: 9,
+			borderStyle: 'solid',
+			borderColor: this.props.config.colors.accent2,
+			borderBottomWidth: 1,
+			fontSize: 6,
 		},
 	} );
 
