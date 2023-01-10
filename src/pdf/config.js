@@ -1,7 +1,5 @@
 import dayjs from 'dayjs';
-import { t } from 'i18next';
 
-import { ITINERARY_ITEM, ITINERARY_LINES } from 'configuration-form/itinerary';
 import { LATO } from 'pdf/lib/fonts';
 
 const CONFIG_FIELDS = [
@@ -41,6 +39,12 @@ export function hydrateFromObject( object ) {
 
 class PdfConfig {
 	constructor() {
+		this.colors = {
+			basic1: '#000000',
+			basic2: '#FFFFFF',
+			accent1: '#9D9D9D',
+			accent2: '#C9C9C9',
+		};
 		this.year = dayjs().year();
 		this.month = 0;
 		this.firstDayOfWeek = dayjs.localeData().firstDayOfWeek();
@@ -50,66 +54,25 @@ class PdfConfig {
 		this.monthCount = 12;
 		this.fontFamily = LATO;
 		this.isMonthOverviewEnabled = true;
-		this.habits = [
-			t( 'habits.example1', { ns: 'config' } ),
-			t( 'habits.example2', { ns: 'config' } ),
-			t( 'habits.example3', { ns: 'config' } ),
-			t( 'habits.example4', { ns: 'config' } ),
-		];
-		this.monthItinerary = [
-			{
-				type: ITINERARY_ITEM,
-				value: t( 'month.goal', { ns: 'config' } ),
-			},
-			{
-				type: ITINERARY_LINES,
-				value: 2,
-			},
-			{
-				type: ITINERARY_ITEM,
-				value: t( 'month.notes', { ns: 'config' } ),
-			},
-			{
-				type: ITINERARY_LINES,
-				value: 50,
-			},
-		];
+		this.habits = [];
+		this.monthItinerary = [];
 		this.isWeekOverviewEnabled = true;
-		this.todos = [
-			t( 'todos.example1', { ns: 'config' } ),
-			t( 'todos.example2', { ns: 'config' } ),
-		];
+		this.todos = [];
 
 		let dayOfWeek = this.firstDayOfWeek;
 		this.dayItineraries = [ ...Array( 7 ).keys() ].map( () => {
 			const itinerary = {
 				dayOfWeek,
-				items: [ { type: ITINERARY_LINES, value: 50 } ],
+				items: [ ],
 				isEnabled: true,
 			};
 			dayOfWeek = ++dayOfWeek % 7;
 			return itinerary;
 		} );
-		this.isWeekRetrospectiveEnabled = true;
-		this.weekRetrospectiveItinerary = [
-			{
-				type: ITINERARY_LINES,
-				value: 50,
-			},
-		];
-		this.pageSize = [ '157mm', '209mm' ];
-		this.specialDates = {
-			'01-01': [
-				t( 'special-dates.example1', { ns: 'config' } ),
-				t( 'special-dates.example2', { ns: 'config' } ),
-			],
-			'03-01': [ t( 'special-dates.example3', { ns: 'config' } ) ],
-			'13-01': [
-				t( 'special-dates.example4', { ns: 'config' } ),
-				t( 'special-dates.example5', { ns: 'config' } ),
-			],
-			'14-01': [ t( 'special-dates.example6', { ns: 'config' } ) ],
-		};
+		this.isWeekRetrospectiveEnabled = false;
+		this.weekRetrospectiveItinerary = [];
+		this.pageSize = [ 445, 592 ];
+		this.specialDates = {};
 	}
 }
 

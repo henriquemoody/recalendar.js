@@ -11,6 +11,7 @@ class Header extends React.PureComponent {
 				flexGrow: 0,
 				flexDirection: 'row',
 				backgroundColor: 'white',
+				borderBottom: '1px solid black',
 			},
 			meta: {
 				flexGrow: 1,
@@ -28,14 +29,12 @@ class Header extends React.PureComponent {
 			},
 			subtitle: {
 				marginLeft: 'auto',
-				textTransform: 'uppercase',
 				textAlign: 'right',
 				margin: '0 5',
 				fontSize: props.subtitleSize,
 				flex: 1,
 			},
 			title: {
-				textTransform: 'uppercase',
 				textDecoration: 'none',
 				justifyContent: 'center',
 				textAlign: 'right',
@@ -49,10 +48,10 @@ class Header extends React.PureComponent {
 				textDecoration: 'none',
 				justifyContent: 'center',
 				padding: '10 5',
-				fontSize: 20,
+				fontSize: props.titleSize,
 			},
 			dayNumber: {
-				fontSize: 55,
+				fontSize: 45,
 				fontWeight: 'bold',
 				marginBottom: -5,
 			},
@@ -113,7 +112,7 @@ class Header extends React.PureComponent {
 
 		return (
 			<View id={ id } style={ this.styles.header }>
-				{calendar}
+				{/*{calendar}*/}
 				<View style={ this.styles.meta }>
 					<View style={ this.styles.dateMain }>
 						<Link src={ titleLink } style={ this.styles.title }>
@@ -138,8 +137,8 @@ class Header extends React.PureComponent {
 }
 
 Header.defaultProps = {
-	titleSize: 20,
-	subtitleSize: 20,
+	titleSize: 15,
+	subtitleSize: 15,
 };
 
 Header.propTypes = {

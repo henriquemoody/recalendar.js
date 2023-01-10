@@ -12,5 +12,4 @@ export function pageStyle( { alwaysOnSidebar, isLeftHanded } ) {
 
 export const content = {
 	flexGrow: 1,
-	borderTop: '1 solid black',
 };

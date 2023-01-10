@@ -118,7 +118,7 @@ class SquareCalendar extends React.Component {
 					src={ '#' + monthOverviewLink( date.subtract( 1, 'month' ) ) }
 					style={ [ monthArrow, pushLeft ] }
 				>
-					{'<'}
+					«
 				</Link>
 				<Link src={ '#' + monthOverviewLink( date ) } style={ monthName }>
 					{date.format( 'MMM' )}
@@ -130,7 +130,7 @@ class SquareCalendar extends React.Component {
 					src={ '#' + monthOverviewLink( date.add( 1, 'month' ) ) }
 					style={ [ monthArrow, pushRight ] }
 				>
-					{'>'}
+					»
 				</Link>
 			</View>
 		);
